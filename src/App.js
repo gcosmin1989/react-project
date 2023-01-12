@@ -3,19 +3,23 @@ import './App.css';
 import './index.css';
 import UserAddForm from './components/UserAddForm';
 import UserList from './components/UserList';
-
-// function App() {
-// 	return <div className="App" />;
-// }
+import { usersJSON } from './components/UsersDB';
+import PostList from './components/PostList';
 
 class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			background: 'white',
+			background: '#d0fbf6',
 			color: 'black',
-			users: []
+			users: usersJSON,
+			posts: []
 		};
+	}
+	componentDidMount() {
+		fetch('https://jsonplaceholder.typicode.com/posts').then((response) => response.json()).then((postList) => {
+			this.setState({ posts: postList });
+		});
 	}
 
 	handleBackgroundChange(event) {
@@ -29,33 +33,19 @@ class App extends React.Component {
 		this.setState({ color: textColor });
 	}
 	updateUsersList(user) {
-		// this.setState({
-		// 	users: [ ...this.state.users, user ]
-		// });
 		this.setState((previousState) => {
 			return {
-				users: [ ...previousState.users, user ]
+				users: [ user, ...previousState.users ]
 			};
 		});
 	}
-
-	componentDidMount() {
-		fetch('https://jsonplaceholder.typicode.com/users')
-			.then((response) => {
-				return response.json();
-			})
-			.then((json) => {
-				//filtram datele venite de la API
-				//astfel incat pe ecran sa fie afisati doar 3 useri
-				//BONUS adaugati fiecarui user o propietate
-				//numita "isGoldClient" cu valoarea true
-				const filteredJson = json.filter((user) => user.id < 4);
-				filteredJson.forEach((user) => {
-					user.isGoldClient = true;
-				});
-				this.setState({ users: filteredJson });
-			});
+	deleteHandler(index) {
+		this.setState((prevState) => {
+			prevState.users.splice(index, 1);
+			return { users: [ ...prevState.users ] };
+		});
 	}
+
 	render() {
 		//console.log(this.state);
 
@@ -73,24 +63,57 @@ class App extends React.Component {
 						this.updateUsersList(user);
 					}}
 				/>
-				{/* <UserItem
-					name={this.state.users[0].name}
-					email={this.state.users[0].email}
-					isGoldClient={this.state.users[0].isGoldClient}
-					salariu={this.state.users[0].salariu}
-					img={this.state.users[0].img}
-				/>
-				<UserItem
-					name={this.state.users[1].name}
-					email={this.state.users[1].email}
-					isGoldClient={this.state.users[1].isGoldClient}
-					salariu={this.state.users[1].salariu}
-					img={this.state.users[1].img}
-				/> */}
-				{console.log(this.state.background)}
-				{this.state.background === '#000000' ? null : <UserList users={this.state.users} />}
-				<input type="color" onChange={(event) => this.handleBackgroundChange(event)} />
-				<input type="color" onChange={(event) => this.handlerTextColor(event)} />
+
+				<div>
+					<h2>Change Color</h2>
+					<div>
+						<input type="color" onChange={(event) => this.handleBackgroundChange(event)} />
+						<label> Background Color</label>
+
+						<input type="color" onChange={(event) => this.handlerTextColor(event)} />
+						<label> Text Color</label>
+					</div>
+					<div className="column right">
+						<div className="show-buttons">
+							<button
+								className="submitBtn"
+								type="submit"
+								name="Users"
+								onClick={() => {
+									this.setState({ list: 'users' });
+								}}
+							>
+								{' '}
+								Show Users
+							</button>
+							<button
+								className="submitBtn"
+								type="submit"
+								name="Posts"
+								onClick={() => {
+									this.setState({ list: 'posts' });
+								}}
+							>
+								{' '}
+								Show Posts
+							</button>
+						</div>
+
+						{this.state.list === 'posts' ? (
+							<PostList posts={this.state.posts} />
+						) : (
+							<UserList
+								users={this.state.users}
+								deleteHandler={(event) => {
+									this.deleteHandler(event);
+								}}
+							/>
+						)}
+					</div>
+					{/* <UserList users={this.state.users} />
+
+					<PostList posts={this.state.posts} /> */}
+				</div>
 			</div>
 		);
 	}

@@ -7,6 +7,7 @@ class UserAddForm extends React.Component {
 		this.state = {
 			name: '',
 			email: '',
+			salary: '',
 			isGoldClient: false
 		};
 	}
@@ -18,6 +19,10 @@ class UserAddForm extends React.Component {
 		const inputValue = event.target.value;
 		this.setState({ email: inputValue });
 	}
+	handlerSalaryChange(event) {
+		const inputValue = event.target.value;
+		this.setState({ salary: inputValue });
+	}
 	handlerIsGoldClientChange(event) {
 		const inputValue = event.target.checked;
 		this.setState({ isGoldClient: inputValue });
@@ -28,6 +33,7 @@ class UserAddForm extends React.Component {
 		const newUser = {
 			name: this.state.name,
 			email: this.state.email,
+			salary: this.state.salary,
 			isGoldClient: this.state.isGoldClient
 		};
 		this.props.updateUsersList(newUser);
@@ -59,6 +65,15 @@ class UserAddForm extends React.Component {
 					value={this.state.email}
 					onChange={(event) => {
 						this.handlerEmailChange(event);
+					}}
+				/>
+				<label htmlFor="salary">Salariu</label>
+				<input
+					type="text"
+					name="salary"
+					value={this.state.salary}
+					onChange={(event) => {
+						this.handlerSalaryChange(event);
 					}}
 				/>
 

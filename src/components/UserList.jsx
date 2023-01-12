@@ -2,7 +2,6 @@ import React from 'react';
 import UserItem from './UserItem';
 
 class UserList extends React.Component {
-	//const { users } = props;
 	constructor(props) {
 		super(props);
 		this.setState = {};
@@ -17,9 +16,12 @@ class UserList extends React.Component {
 							name={user.name}
 							email={user.email}
 							isGoldClient={user.isGoldClient}
-							salariu={user.salariu}
+							salary={user.salary}
 							img={user.img}
 							key={index}
+							deleteHandler={() => {
+								this.props.deleteHandler(index);
+							}}
 						/>
 					);
 				})}

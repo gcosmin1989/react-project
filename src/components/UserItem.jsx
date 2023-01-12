@@ -1,23 +1,39 @@
 import React from 'react';
+import './UserItem.css';
 
 function UserItem(props) {
-	const { name, email, salariu, isGoldClient } = props;
+	const { name, email, salary, avatar, isGoldClient, img } = props;
 
 	return (
-		<div>
-			<h2>{name}</h2>
-			<p>{email}</p>
-			<p>{salariu}</p>
+		<div className="card">
+			{<img src={img} alt="poza" />}
 			<div>
-				{isGoldClient ? (
-					<p>
-						Client <b>GOLD</b>
-					</p>
-				) : (
-					<p>Nu e gold</p>
-				)}
-				<br />
-				{/* <img src={img} alt="poza" /> */}
+				<h3>{name}</h3>
+				<p>{email}</p>
+				<p>{salary}</p>
+				<p>{avatar}</p>
+				<div>
+					{isGoldClient ? (
+						<p>
+							Client <b>GOLD</b>🏆
+						</p>
+					) : (
+						<p>Nu e gold</p>
+					)}
+				</div>
+
+				<button
+					className="deleteButton"
+					type="submit"
+					texxt
+					id={props.name}
+					onClick={(event) => {
+						event.preventDefault();
+						props.deleteHandler();
+					}}
+				>
+					Delete
+				</button>
 			</div>
 		</div>
 	);
