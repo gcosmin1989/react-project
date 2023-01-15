@@ -9,7 +9,7 @@ class PostList extends React.Component {
 	render() {
 		return (
 			<div>
-				<h2>Postari:</h2>
+				<h2>Posts List:</h2>
 				{this.props.posts.map((post) => {
 					return <PostItem userId={post.userId} title={post.title} body={post.body} key={post.id} />;
 				})}

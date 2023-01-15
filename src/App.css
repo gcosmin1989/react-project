@@ -50,3 +50,39 @@ img {
   flex: 50%;
   padding: 10px
 }
+.button-users {
+  border: none;
+  background-color:  #08d;;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 200;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 30px;
+}
+.button-posts {
+  border: none;
+  background-color:  rgb(35, 207, 1);;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 200;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 30px;
+}
+.button-users:hover, .button-posts:hover{
+  cursor: pointer;
+ 
+    }
+    .button-users:active {
+      background-color: #06b;
+    }
+    .button-posts:active {
+      background-color: #5ab400;
+    }

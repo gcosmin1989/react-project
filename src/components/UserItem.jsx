@@ -15,10 +15,10 @@ function UserItem(props) {
 				<div>
 					{isGoldClient ? (
 						<p>
-							Client <b>GOLD</b>🏆
+							🏆<b>GOLD</b>🏆
 						</p>
 					) : (
-						<p>Nu e gold</p>
+						<p>Not Gold</p>
 					)}
 				</div>
 

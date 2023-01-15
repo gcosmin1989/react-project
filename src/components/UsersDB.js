@@ -4,7 +4,7 @@ export const usersJSON = [
 		name: 'Leanne Graham',
 		username: 'Bret',
 		email: 'Sincere@april.biz',
-		salariu: '10.000 $',
+		salary: '10.000 $',
 		isGoldClient: 'true',
 		img:
 			'https://media.tegna-media.com/assets/BUZZ60/images/5aa92dff-e79d-41b1-9127-85fccb8214df/5aa92dff-e79d-41b1-9127-85fccb8214df_1920x1080.jpg',
@@ -31,8 +31,8 @@ export const usersJSON = [
 		name: 'Ervin Howell',
 		username: 'Antonette',
 		email: 'Shanna@melissa.tv',
-		salariu: '11.000 $',
-		isGoldClient: 'true',
+		salary: '11.000 $',
+		isGoldClient: '',
 		img:
 			'https://cdn2.psychologytoday.com/assets/styles/manual_crop_1_91_1_1528x800/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=7lrLYx-B',
 		address: {
@@ -58,7 +58,7 @@ export const usersJSON = [
 		name: 'Clementine Bauch',
 		username: 'Samantha',
 		email: 'Nathan@yesenia.net',
-		salariu: '12.000 $',
+		salary: '12.000 $',
 		isGoldClient: 'true',
 		img:
 			'https://www.masslive.com/resizer/kNl3qvErgJ3B0Cu-WSBWFYc1B8Q=/arc-anglerfish-arc2-prod-advancelocal/public/W5HI6Y4DINDTNP76R6CLA5IWRU.jpeg',
@@ -85,7 +85,7 @@ export const usersJSON = [
 		name: 'Patricia Lebsack',
 		username: 'Karianne',
 		email: 'Julianne.OConner@kory.org',
-		salariu: '13.000 $',
+		salary: '13.000 $',
 		img: 'https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg',
 		address: {
 			street: 'Hoeger Mall',
@@ -111,7 +111,7 @@ export const usersJSON = [
 		username: 'Kamren',
 		email: 'Lucio_Hettinger@annie.ca',
 		img: 'https://cdn.hswstatic.com/gif/play/0b7f4e9b-f59c-4024-9f06-b3dc12850ab7-1920-1080.jpg',
-		salariu: '14.000 $',
+		salary: '14.000 $',
 		isGoldClient: 'true',
 		address: {
 			street: 'Skiles Walks',
@@ -136,7 +136,7 @@ export const usersJSON = [
 		name: 'Mrs. Dennis Schulist',
 		username: 'Leopoldo_Corkery',
 		email: 'Karley_Dach@jasper.info',
-		salariu: '15.000 $',
+		salary: '15.000 $',
 		img:
 			'https://spunout.ie/wp-content/uploads/2021/01/portrait-black-young-man-face-man-person-ethnic-student-diversity-diverse-confident-millennial_t20_K6aZOV-2.jpg',
 		address: {
@@ -162,7 +162,7 @@ export const usersJSON = [
 		name: 'Kurtis Weissnat',
 		username: 'Elwyn.Skiles',
 		email: 'Telly.Hoeger@billy.biz',
-		salariu: '16.000 $',
+		salary: '16.000 $',
 		isGoldClient: 'true',
 		img: 'https://static.toiimg.com/photo/89456086.cms',
 		address: {
@@ -188,7 +188,7 @@ export const usersJSON = [
 		name: 'Nicholas Runolfsdottir V',
 		username: 'Maxime_Nienow',
 		email: 'Sherwood@rosamond.me',
-		salariu: '17.000 $',
+		salary: '17.000 $',
 		img:
 			'http://firstpersonarts.org/wp-content/uploads/2021/09/MV5BMzI4ZWMzZTQtNjI1My00ZTQxLTg2MDMtYTUwYTMyN2Y0ZWM4XkEyXkFqcGdeQXVyNjUzMjUyODU@._V1_.jpg',
 		address: {
@@ -214,7 +214,7 @@ export const usersJSON = [
 		name: 'Glenna Reichert',
 		username: 'Delphine',
 		email: 'Chaim_McDermott@dana.io',
-		salariu: '18.000 $',
+		salary: '18.000 $',
 		img:
 			'https://i0.wp.com/evanstonroundtable.com/wp-content/uploads/2022/05/Lushina-scaled-e1652827479814.jpg?fit=1200%2C900&ssl=1',
 		address: {
@@ -240,7 +240,7 @@ export const usersJSON = [
 		name: 'Clementina DuBuque',
 		username: 'Moriah.Stanton',
 		email: 'Rey.Padberg@karina.biz',
-		salariu: '19.000 $',
+		salary: '19.000 $',
 		img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgIUF7SE6CROioPfFm3jxwN5cPMxD_MobRdw&usqp=CAU',
 		address: {
 			street: 'Kattie Turnpike',

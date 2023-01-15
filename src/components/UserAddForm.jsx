@@ -28,8 +28,6 @@ class UserAddForm extends React.Component {
 		this.setState({ isGoldClient: inputValue });
 	}
 	handlerFormSubmit(event) {
-		event.preventDefault();
-
 		const newUser = {
 			name: this.state.name,
 			email: this.state.email,
@@ -37,57 +35,97 @@ class UserAddForm extends React.Component {
 			isGoldClient: this.state.isGoldClient
 		};
 		this.props.updateUsersList(newUser);
-		console.log(newUser);
+
+		event.preventDefault();
+		this.setState({
+			name: '',
+			email: '',
+			salary: '',
+			isGoldClient: false
+		});
 	}
 	render() {
 		return (
 			<form
 				className="user-add-form"
 				onSubmit={(event) => {
-					this.handlerFormSubmit(event);
+					if (this.state.name === '') {
+						alert('⚠ Please fill NAME Field ⚠ ');
+						return false;
+					} else if (!this.state.name.match(/^[a-zA-Z]+$/)) {
+						alert('⚠ Name must contain only letters ⚠ ');
+						return false;
+					} else if (this.state.email === '') {
+						alert('⚠ Please fill EMAIL Field ⚠ ');
+						return false;
+					} else if (this.state.salary === '') {
+						alert('⚠ Please fill SALARY Field ⚠ ');
+						return false;
+					} else if (!this.state.salary.match(/^[0-9]*$/)) {
+						alert('⚠ SALARY must be numerical value ⚠ ');
+						return false;
+					} else {
+						this.handlerFormSubmit(event);
+					}
 				}}
 			>
-				<h2>Adauga utilizator nou:</h2>
-				<label htmlFor="name">Nume:</label>
-				<input
-					type="text"
-					name="name"
-					value={this.state.name}
-					onChange={(event) => {
-						this.handlerNameChange(event);
-					}}
-				/>
-
-				<label htmlFor="email">Email</label>
-				<input
-					type="email"
-					name="email"
-					value={this.state.email}
-					onChange={(event) => {
-						this.handlerEmailChange(event);
-					}}
-				/>
-				<label htmlFor="salary">Salariu</label>
-				<input
-					type="text"
-					name="salary"
-					value={this.state.salary}
-					onChange={(event) => {
-						this.handlerSalaryChange(event);
-					}}
-				/>
-
-				<label htmlFor="gold-client">E client Gold?</label>
-				<input
-					type="checkbox"
-					name="gold-client"
-					checked={this.state.isGoldClient}
-					onChange={(event) => {
-						this.handlerIsGoldClientChange(event);
-					}}
-				/>
-
-				<button type="submit">Adauga Utilizator</button>
+				<div className="title">Add New Usser:</div>
+				<div className="input-container ic1">
+					<label className="placeholder" htmlFor="name">
+						Name:
+					</label>
+					<input
+						className="input"
+						type="text"
+						name="name"
+						value={this.state.name}
+						onChange={(event) => {
+							this.handlerNameChange(event);
+						}}
+					/>
+				</div>
+				<div className="input-container ic1">
+					<label className="placeholder" htmlFor="email">
+						Email
+					</label>
+					<input
+						className="input"
+						type="email"
+						name="email"
+						value={this.state.email}
+						onChange={(event) => {
+							this.handlerEmailChange(event);
+						}}
+					/>
+				</div>
+				<div className="input-container ic1">
+					<label className="placeholder" htmlFor="salary">
+						Salary
+					</label>
+					<input
+						className="input"
+						type="text"
+						name="salary"
+						value={this.state.salary}
+						onChange={(event) => {
+							this.handlerSalaryChange(event);
+						}}
+					/>
+				</div>
+				<div className="gold-check">
+					<label htmlFor="gold-client">Gold Client?</label>
+					<input
+						type="checkbox"
+						name="gold-client"
+						checked={this.state.isGoldClient}
+						onChange={(event) => {
+							this.handlerIsGoldClientChange(event);
+						}}
+					/>
+				</div>
+				<button type="submit" className="submit">
+					Add User
+				</button>
 			</form>
 		);
 	}

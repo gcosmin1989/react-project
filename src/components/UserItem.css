@@ -2,13 +2,13 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    background: #c1c6c8;
-    border: 3px solid #c7d4dc;
+    background: #CBF1F5;
+    border: 3px solid #CBF1F5;
     padding: 3px;
     width: 75%;
     margin: auto;
     margin-top: 10px;
-    border-radius: 10%;
+    border-radius:30px;
     gap: 5px;
     
 
@@ -32,7 +32,7 @@
       height: 200px;
   }
   .deleteButton{
-    background-color: red;
+    background-color: rgb(243, 138, 138);
     border:  red;
   color: white;
     padding: 15px 32px;
@@ -40,5 +40,10 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    
+    border-radius: 20px;  
+  }
+
+  .deleteButton:hover{
+background: red;
+cursor: pointer;
   }

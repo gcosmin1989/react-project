@@ -10,7 +10,7 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			background: '#d0fbf6',
+			background: '#A6E3E9',
 			color: 'black',
 			users: usersJSON,
 			posts: []
@@ -57,13 +57,6 @@ class App extends React.Component {
 					color: this.state.color
 				}}
 			>
-				<h1>Lista Utilizator</h1>
-				<UserAddForm
-					updateUsersList={(user) => {
-						this.updateUsersList(user);
-					}}
-				/>
-
 				<div>
 					<h2>Change Color</h2>
 					<div>
@@ -73,10 +66,16 @@ class App extends React.Component {
 						<input type="color" onChange={(event) => this.handlerTextColor(event)} />
 						<label> Text Color</label>
 					</div>
+					<UserAddForm
+						updateUsersList={(user) => {
+							this.updateUsersList(user);
+						}}
+					/>
+
 					<div className="column right">
 						<div className="show-buttons">
 							<button
-								className="submitBtn"
+								className="button-users"
 								type="submit"
 								name="Users"
 								onClick={() => {
@@ -87,7 +86,7 @@ class App extends React.Component {
 								Show Users
 							</button>
 							<button
-								className="submitBtn"
+								className="button-posts"
 								type="submit"
 								name="Posts"
 								onClick={() => {

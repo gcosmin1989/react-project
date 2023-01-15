@@ -1,10 +1,91 @@
-.user-add-form h2{
-    color: blue;
-}
+
 .user-add-form{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    font-style: bold;
-    font-weight: bolder;
+    background-color: #CBF1F5;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 550px;
+    padding: 20px;
+    width: 320px;
+    align-items: center;
+    display: inline-block;
+    margin-top: 20px
 }
+
+  
+  .title {
+
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .ic1 {
+    margin-top: 40px;
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  }
+  
+  .input {
+    background-color:white;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: black;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
+  
+
+  .placeholder {
+ 
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+ 
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+  }
+  
+  
+  .submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .submit:active {
+    background-color: #06b;
+  }
+
+  .gold-check{
+    position: relative;
+    margin-top: 50px;
+    
+
+
+  }
+
+
+  
